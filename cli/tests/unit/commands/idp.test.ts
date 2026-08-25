@@ -323,7 +323,7 @@ describe('sig idp', () => {
                 importFile,
                 [
                     'otpauth://totp/GitHub:alice?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&issuer=GitHub',
-                    'otpauth://totp/accounts.sap.com:user?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&issuer=accounts.sap.com',
+                    'otpauth://totp/corp-idp.example.com:user?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&issuer=corp-idp.example.com',
                 ].join('\n'),
                 'utf-8',
             );
@@ -332,7 +332,7 @@ describe('sig idp', () => {
 
             const stderr = stderrChunks.join('');
             expect(stderr).toContain('ADDED: github');
-            expect(stderr).toContain('ADDED: accounts.sap.com');
+            expect(stderr).toContain('ADDED: corp-idp.example.com');
             expect(stderr).toContain('2 added');
             expect(stderr).toContain('0 skipped');
 
